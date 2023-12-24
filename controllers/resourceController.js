@@ -2,9 +2,14 @@ require("dotenv").config({ path: "./.env" });
 
 const getAllResources = async (req, res) => {
   try {
-    const response = await fetch(
-      `https://newsdata.io/api/1/news?apikey=${process.env.NEWS_API}&qInTitle=pets&language=en,pi`
-    );
+    let { page } = req.query;
+
+    let apiUrl = `https://newsdata.io/api/1/news?apikey=${process.env.NEWS_API}&qInTitle=pets&language=en,pi`;
+    if (page) {
+      apiUrl += `&page=${page}`;
+    }
+
+    const response = await fetch(apiUrl);
 
     const data = await response.json();
 
