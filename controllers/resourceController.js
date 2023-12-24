@@ -4,7 +4,7 @@ const getAllResources = async (req, res) => {
   try {
     let { page } = req.query;
 
-    let apiUrl = `https://newsdata.io/api/1/news?apikey=${process.env.NEWS_API}&qInTitle=pets&language=en,pi`;
+    let apiUrl = `https://newsdata.io/api/1/news?apikey=${process.env.NEWS_API}&qInTitle=pets&language=en,pi&category=education,entertainment,food,health`;
     if (page) {
       apiUrl += `&page=${page}`;
     }
