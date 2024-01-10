@@ -1,3 +1,4 @@
+// DOTENV
 require("dotenv").config({ path: "./.env" });
 
 const getAllResources = async (req, res) => {

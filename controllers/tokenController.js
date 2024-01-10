@@ -1,4 +1,7 @@
+// LIBRARIES
 const StreamChat = require("stream-chat").StreamChat;
+
+// DOTENV
 require("dotenv").config({ path: "./.env" });
 
 const getUserToken = async (req, res) => {
@@ -25,3 +28,5 @@ const getUserToken = async (req, res) => {
 module.exports = {
   getUserToken,
 };
+
+//
