@@ -6,6 +6,6 @@ const router = app.Router();
 const { getUserToken } = require("../controllers");
 
 // ROUTES
-router.route("/").get(getUserToken);
+router.route("/:id").get(getUserToken);
 
 module.exports = router;
