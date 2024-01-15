@@ -16,6 +16,11 @@ const getUserToken = async (req, res) => {
     const serverClient = new StreamChat(STREAM_CHAT_API, STREAM_CHAT_SECRET);
     const token = serverClient.createToken(id);
 
+    const updateResponse = await serverClient.upsertUser({
+      id: id,
+      role: "admin",
+    });
+
     return res.status(200).send({
       message: "token generated successfully",
       token: token,
