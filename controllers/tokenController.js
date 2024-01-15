@@ -16,7 +16,7 @@ const getUserToken = async (req, res) => {
     const serverClient = new StreamChat(STREAM_CHAT_API, STREAM_CHAT_SECRET);
     const token = serverClient.createToken(id);
 
-    const updateResponse = await serverClient.upsertUser({
+    await serverClient.upsertUser({
       id: id,
       role: "admin",
     });
@@ -34,5 +34,3 @@ const getUserToken = async (req, res) => {
 module.exports = {
   getUserToken,
 };
-
-//
