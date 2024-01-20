@@ -13,13 +13,19 @@ const createChat = (req, res) => {
     templateId: "d-bc5e9eca5f7c4ad7a6cd7a1b5ab1664f",
   };
 
-  sgMail.send(msg).catch(error => {
-    console.error(error);
-  });
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log("Email sent");
+    })
+    .catch(error => {
+      console.error(error);
+    });
 
   return res.status(200).send("Email sent");
 };
 
+// Export the controller object
 module.exports = {
   createChat,
 };
