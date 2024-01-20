@@ -20,7 +20,6 @@ const createChat = (req, res) => {
   return res.status(200).send("Email sent");
 };
 
-// Export the controller object
 module.exports = {
   createChat,
 };
