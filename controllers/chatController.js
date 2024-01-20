@@ -9,7 +9,10 @@ const createChat = (req, res) => {
 
   const msg = {
     to: email,
-    from: "odingandarosa@gmail.com",
+    from: {
+      email: "missionpawsible123@gmail.com",
+      name: "Mission Pawsible",
+    },
     templateId: "d-bc5e9eca5f7c4ad7a6cd7a1b5ab1664f",
   };
 
